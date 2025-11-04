@@ -25,6 +25,10 @@ body {
     color: var(--c-black);
 }
 
+h2 {
+    font-size: clamp(2.4rem, 4vw, 3.2rem);
+}
+
 p {
     font-size: 1.6rem;
     font-weight: 300;
@@ -42,18 +46,32 @@ p {
     margin: 4rem 0;
 }
 
+.section--large {
+    margin: 6rem 0;
+}
+
 header {
-    background: url(img/banner-img-crayons.webp) no-repeat center center;
-    color: var(--c-white);
+    background: url(img/childcaremarin-hero.webp) no-repeat center center;
+    background-size: cover;
     min-height: 300px;
     display: grid;
-    align-items: center;
+    align-items: end;
+}
+
+header h1 {
+    color: var(--c-black);
+    background-color: rgba(255, 255, 255, 0.6);
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: clamp(2.8rem, 5vw, 4rem);
+    margin: 0 0 4rem;
 }
 
 .welcome .container {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 4rem;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 .responsive-iframe {
@@ -73,6 +91,51 @@ header {
     border: 0;
 }
 
+.contact h2 {
+    text-align: center;    
+}
+
+.contact .container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 480px;
+    font-size: 1.8rem;
+}
+
+.contact form input,
+.contact form textarea {
+    margin-bottom: 2rem;
+    padding: 1.6rem 1.3rem;
+    font-size: 1.8rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.contact form textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.contact form input[type="submit"] {
+    background-color: var(--c-dark-gray);
+    color: var(--c-white);
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-top: 0.3rem;
+    transition: background-color 0.3s ease;
+}
+
+.contact form input[type="submit"]:hover {
+    background-color: #555;
+}
+
 footer {
     color: var(--c-white);
     background-color: var(--c-dark-gray);
@@ -88,3 +151,14 @@ footer a {
 footer a:hover {
     color: #999;
 }
+
+.thankyou {
+    min-height: 400px;
+}
+
+@media screen and (max-width: 768px) {
+    .welcome .container {
+        grid-template-columns: 100%;
+    }
+}
+
